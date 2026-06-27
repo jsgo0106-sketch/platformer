@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Mobile Controls -->
+    <div id="mobile-controls">
+        <!-- D-Pad (left side) -->
+        <div id="dpad">
+            <div id="ctrl-left" class="ctrl-btn">◀</div>
+            <div id="ctrl-right" class="ctrl-btn">▶</div>
+        </div>
+        <!-- Action buttons (right side) -->
+        <div id="actions">
+            <div id="ctrl-jump" class="ctrl-btn action-btn">JUMP</div>
+            <div id="ctrl-dash" class="ctrl-btn action-btn">DASH</div>
+            <div id="ctrl-throw" class="ctrl-btn action-btn">THROW</div>
+        </div>
+    </div>
+
+    <div id="start-overlay">
+        Click anywhere to start
+        <small>Audio will unlock on first interaction</small>
+    </div>
+    <div id="game-container">
+        <canvas id="game" width="800" height="600"></canvas>
+        <div id="hud">
+            <div id="dashBar"><div id="dashFill"></div></div>
+            <div id="orbInfo"></div>
+        </div>
+        <div id="info">Connecting...</div>
+    </div>
+
+    <div id="chat-panel">
+        <div id="chat-header">💬 Chat</div>
+        <div id="chat-messages"></div>
+        <div id="chat-input-container">
+            <input type="text" id="chat-input" placeholder="Type a message..." maxlength="200" />
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
