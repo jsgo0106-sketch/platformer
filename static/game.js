@@ -9,7 +9,8 @@ const chatSend=document.getElementById('chat-send');
 const SCREEN_W=800,SCREEN_H=600;
 
 
-const ws=new WebSocket('ws://'+location.host+'/ws');
+const protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+const ws = new WebSocket(protocol + '://' + location.host + '/ws');
 let myId=null,players={},platforms=[],orbs=[],thrownOrbs=[],explosions=[],chatMessages=[],bots=[];
 let worldWidth=2400,worldHeight=600;
 const keys={left:false,right:false,jump:false,dash:false,throwOrb:false,detonate:false};
