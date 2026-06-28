@@ -46,6 +46,16 @@ func gameLoop() {
 
 	for range ticker.C {
 		playersMu.Lock()
+		// Safety limits
+		if len(orbs) > 20 {
+			orbs = orbs[len(orbs)-10:] // Keep last 10
+		}
+		if len(explosions) > 30 {
+			explosions = nil // Clear old explosions
+		}
+		if len(thrownOrbs) > 20 {
+			thrownOrbs = thrownOrbs[len(thrownOrbs)-10:]
+		}
 		now := float64(time.Now().UnixNano()) / 1e9
 
 		// Spawn orb
